@@ -1,0 +1,21 @@
+$color-font: #4f4f4f;
+
+main {
+  padding: 0.2em 0.9em;
+}
+
+.stay-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.stay__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    color: $color-font;
+  }
+}
