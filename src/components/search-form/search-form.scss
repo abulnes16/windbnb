@@ -1,0 +1,50 @@
+$box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+$color-border: #f2f2f2;
+
+.search-form {
+  display: flex;
+  align-self: center;
+  box-shadow: $box-shadow;
+  border-radius: 16px;
+  margin-top: 35px;
+
+  &__location {
+    background-color: transparent;
+    padding: 1.4em 0.2em;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    width: 50%;
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
+    box-sizing: border-box;
+    width: 35%;
+    text-align: center;
+    transition: all 0.3s ease-in;
+  }
+
+  &__btn {
+    color: var(--color-primary);
+    font-size: 16px;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  &__location:active {
+    transform: scale(0.9);
+  }
+  &__btn:active {
+    transform: scale(0.7);
+  }
+}
