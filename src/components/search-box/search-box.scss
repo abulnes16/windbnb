@@ -1,7 +1,8 @@
 $box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+$border-radius: 16px;
 
 .search-box {
-  padding: 0.4em 0.8em;
+  padding: 0.4em 0.8em 1.2em;
   position: absolute;
   background-color: white;
   top: 0;
@@ -25,11 +26,11 @@ $box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
   }
 
   &__form {
-    border-radius: 16px;
+    border-radius: $border-radius;
     box-shadow: $box-shadow;
   }
   &__input {
-    padding: 0.8em 1.2em 0.4em;
+    padding: 0.8em 1.2em 0.6em;
     label {
       font-size: 9px;
       line-height: 11px;
@@ -43,9 +44,47 @@ $box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
       outline: none;
     }
   }
+
+  &__locations {
+    list-style: none;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    padding-left: 1.2em;
+    color: var(--color-font-secondary);
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8em 1.8em;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: rgba(235, 87, 87, 0.9);
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+  }
 }
 
 hr {
-  width: calc(100% - 1.2em);
+  width: 100%;
+  margin: 0;
   border: 1px solid #f2f2f2;
+}
+
+.close-btn {
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 22px;
+  margin-right: 10px;
 }

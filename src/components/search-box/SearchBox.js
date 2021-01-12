@@ -7,7 +7,9 @@ const SearchBox = ({ toggleBox }) => {
     <div className="search-box">
       <div className="search-box__header">
         <p>Edit your search</p>
-        <span onClick={toggleBox}>&times;</span>
+        <span className="close-btn" onClick={toggleBox}>
+          &times;
+        </span>
       </div>
       <div className="search-box__form">
         <div className="search-box__input">
@@ -20,28 +22,28 @@ const SearchBox = ({ toggleBox }) => {
           <input placeholder="Add guests" />
         </div>
       </div>
-      <div className="search-box__locations">
-        <ul>
-          <li>
-            <MdLocationOn />
-            Helsinki, Finland
-          </li>
-          <li>
-            <MdLocationOn />
-            Helsinki, Finland
-          </li>
-          <li>
-            <MdLocationOn />
-            Helsinki, Finland
-          </li>
-          <li>
-            <MdLocationOn />
-            Helsinki, Finland
-          </li>
-        </ul>
-      </div>
+
+      <ul className="search-box__locations">
+        <li>
+          <MdLocationOn className="icon" />
+          Helsinki, Finland
+        </li>
+        <li>
+          <MdLocationOn className="icon" />
+          Helsinki, Finland
+        </li>
+        <li>
+          <MdLocationOn className="icon" />
+          Helsinki, Finland
+        </li>
+        <li>
+          <MdLocationOn className="icon" />
+          Helsinki, Finland
+        </li>
+      </ul>
+
       <button className="search-box__btn">
-        <MdSearch />
+        <MdSearch className="icon" />
         Search
       </button>
     </div>
