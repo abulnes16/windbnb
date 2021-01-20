@@ -2,7 +2,7 @@ import React from "react";
 import { MdLocationOn, MdSearch } from "react-icons/md";
 import "./search-box.scss";
 
-const SearchBox = ({ toggleBox }) => {
+const SearchBox = ({ toggleBox, focus }) => {
   return (
     <div className="search-box">
       <div className="search-box__header">
@@ -14,12 +14,15 @@ const SearchBox = ({ toggleBox }) => {
       <div className="search-box__form">
         <div className="search-box__input">
           <label>Location</label>
-          <input value="Helsinki, Finland" />
+          <input
+            defaultValue="Helsinki, Finland"
+            autoFocus={focus === "location"}
+          />
         </div>
         <hr />
         <div className="search-box__input">
           <label>Guests</label>
-          <input placeholder="Add guests" />
+          <input placeholder="Add guests" autoFocus={focus === "guest"} />
         </div>
       </div>
 

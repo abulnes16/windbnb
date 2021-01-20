@@ -48,3 +48,21 @@ $color-border: #f2f2f2;
     transform: scale(0.7);
   }
 }
+
+.search-enter {
+  top: -100vh;
+}
+
+.search-enter-active {
+  top: 0;
+  transition: top 0.3s ease;
+}
+
+.search-exit {
+  top: 0;
+}
+
+.search-exit-active {
+  top: -100vh;
+  transition: top 0.3s ease;
+}

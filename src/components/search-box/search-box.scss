@@ -5,7 +5,6 @@ $border-radius: 16px;
   padding: 0.4em 0.8em 1.2em;
   position: absolute;
   background-color: white;
-  top: 0;
   right: 0;
   left: 0;
 
@@ -56,6 +55,7 @@ $border-radius: 16px;
       display: flex;
       align-items: center;
       margin-bottom: 25px;
+      cursor: pointer;
     }
   }
 
