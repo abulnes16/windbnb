@@ -1,8 +1,10 @@
-import React from "react";
-import { MdLocationOn, MdSearch } from "react-icons/md";
+import React, { useState } from "react";
+import { MdAdd, MdLocationOn, MdRemove, MdSearch } from "react-icons/md";
 import "./search-box.scss";
 
 const SearchBox = ({ toggleBox, focus }) => {
+  const [showOptions, setShowOptions] = useState(focus);
+
   return (
     <div className="search-box">
       <div className="search-box__header">
@@ -17,33 +19,74 @@ const SearchBox = ({ toggleBox, focus }) => {
           <input
             defaultValue="Helsinki, Finland"
             autoFocus={focus === "location"}
+            onFocus={() => setShowOptions("location")}
           />
         </div>
         <hr />
         <div className="search-box__input">
           <label>Guests</label>
-          <input placeholder="Add guests" autoFocus={focus === "guest"} />
+          <input
+            placeholder="Add guests"
+            autoFocus={focus === "guest"}
+            onFocus={() => setShowOptions("guest")}
+          />
         </div>
       </div>
 
-      <ul className="search-box__locations">
-        <li>
-          <MdLocationOn className="icon" />
-          Helsinki, Finland
-        </li>
-        <li>
-          <MdLocationOn className="icon" />
-          Helsinki, Finland
-        </li>
-        <li>
-          <MdLocationOn className="icon" />
-          Helsinki, Finland
-        </li>
-        <li>
-          <MdLocationOn className="icon" />
-          Helsinki, Finland
-        </li>
-      </ul>
+      {showOptions === "location" ? (
+        <ul className="search-box__locations">
+          <li>
+            <MdLocationOn className="icon" />
+            Helsinki, Finland
+          </li>
+          <li>
+            <MdLocationOn className="icon" />
+            Helsinki, Finland
+          </li>
+          <li>
+            <MdLocationOn className="icon" />
+            Helsinki, Finland
+          </li>
+          <li>
+            <MdLocationOn className="icon" />
+            Helsinki, Finland
+          </li>
+        </ul>
+      ) : (
+        <>
+          <div className="guest-counter">
+            <div>
+              <p className="guest-counter__type">Adults</p>
+              <p>Ages 13 or above</p>
+            </div>
+            <div className="counter">
+              <button className="guest-counter__btn">
+                <MdAdd />
+              </button>
+              <span>10 </span>
+              <button className="guest-counter__btn">
+                <MdRemove />
+              </button>
+            </div>
+          </div>
+
+          <div className="guest-counter">
+            <div>
+              <p className="guest-counter__type">Children</p>
+              <p>Ages 2-12</p>
+            </div>
+            <div className="counter">
+              <button className="guest-counter__btn">
+                <MdAdd />
+              </button>
+              <span>10 </span>
+              <button className="guest-counter__btn">
+                <MdRemove />
+              </button>
+            </div>
+          </div>
+        </>
+      )}
 
       <button className="search-box__btn">
         <MdSearch className="icon" />
