@@ -1,6 +1,7 @@
 $box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
 $border-radius: 16px;
 $counter-color: #828282;
+$location-transition: all 0.35s ease;
 
 .search-box {
   padding: 0.4em 0.8em 1.2em;
@@ -46,9 +47,10 @@ $counter-color: #828282;
   }
 
   &__locations {
+    position: relative;
     list-style: none;
     margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     padding-left: 1.2em;
     color: var(--color-font-secondary);
 
@@ -123,7 +125,7 @@ hr {
 
   .counter {
     display: flex;
-
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -139,4 +141,45 @@ hr {
     justify-content: center;
     align-items: center;
   }
+}
+
+.counter-container {
+  position: relative;
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.location-list-enter {
+  left: -100vw;
+}
+.location-list-enter-active {
+  left: 0;
+  transition: $location-transition;
+}
+.location-exit {
+  left: 0;
+}
+
+.location-list-exit-active {
+  left: -100vw;
+  transition: $location-transition;
+}
+.counter-list-enter {
+  right: -100vw;
+}
+.counter-list-enter-active {
+  right: 0;
+  transition: $location-transition;
+}
+
+.counter-list-exit {
+  right: 0;
+}
+
+.counter-list-exit-active {
+  right: -100vw;
+  transition: $location-transition;
 }
